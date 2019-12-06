@@ -1,0 +1,27 @@
+@import '_vars';
+@import 'modules/_header';
+@import 'modules/_home';
+@import 'modules/_footer';
+@import 'modules/_error';
+
+.hidden {
+    display: none;
+}
+
+body {
+    color: $main-color;
+    background-color: $body-bg;
+}
+
+h1 {
+    color: black;
+}
+
+h2, h3 {
+    color: $light-g;
+}
+
+p {
+    color: $dark-g;
+}
+

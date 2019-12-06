@@ -1,68 +1,260 @@
 (()=> {
-    // try to get the object and do stuff with it
-
-    const seeMoreButtons = document.querySelectorAll(".see-more"),
-        popOver = document.querySelector(".popover");
 
     const waypoint = new Waypoint({
-        // what element is this waypoint looking at?
-        // the handler will fire when it scrolls into view
-        element: document.getElementById('beer2'),
-        // what should we do when we hit the waypoint? this is up to you?
-        // you can trigger animation, do an AJAX call... whatever
+
+        element: document.getElementById('1'),
+
         handler: function(direction) {
-          console.log('Scrolled to waypoint!')
-          this.element.innerHTML += `
-          <p>Added this with waypooint! we are scrolling ${direction}</p>`
-        }
+          console.log('Scrolled to Africa!')
+            this.classList.remove("hidden")
+        },
+        offset: "20%"
       })
 
       const waypoint2 = new Waypoint({
-        // what element is this waypoint looking at?
-        // the handler will fire when it scrolls into view
 
-        element: document.getElementById('beer3'),
-        // what should we do when we hit the waypoint? this is up to you?
-        // you can trigger animation, do an AJAX call... whatever
+        element: document.getElementById('2'),
+
         handler: function(direction) {
-          console.log('Scrolled to waypoint 2!')
+          console.log('Scrolled to Oceania!')
+          this.classList.remove("hidden")
         },
-
-        offset: 200
-
+        offset: "30%"
       })
-      
-    function buildPopover(beerdata, el) {
-        popOver.querySelector(".ipa-rating").textContent = `IPA Rating: ${beerdata.IpaRating}`;
-        popOver.querySelector(".ratings").textContent = `Average Rating: ${beerdata.ratings}`;
-        popOver.querySelector(".beer-description").textContent = beerdata.description;
 
-        popOver.classList.toggle("show-popover");
-        el.appendChild(popOver);
+      const waypoint3 = new Waypoint({
+
+        element: document.getElementById('3'),
+
+        handler: function(direction) {
+          console.log('Scrolled to Other Countries!')
+          this.classList.remove("hidden")
+        },
+        offset: "40%"
+      })
+
+      const waypoint4 = new Waypoint({
+
+        element: document.getElementById('4'),
+
+        handler: function(direction) {
+          console.log('Scrolled to America!')
+          this.classList.remove("hidden")
+        },
+        offset: "50%"
+      })
+
+      const waypoint5 = new Waypoint({
+
+        element: document.getElementById('5'),
+
+        handler: function(direction) {
+          console.log('Scrolled to Europe!')
+          this.classList.remove("hidden")
+        },
+        offset: "50%"
+      })
+
+      const waypoint6 = new Waypoint({
+
+        element: document.getElementById('6'),
+
+        handler: function(direction) {
+          console.log('Scrolled to Asia!')
+          this.classList.remove("hidden")
+        },
+        offset: "50%"
+      })
+
+    //   *********************************************************** AF
+    
+      
+    function getDataAfrica(afdata) {
+        let targetDiv = document.querySelector(".AF");
+        let dataContent = `
+        <h2>${afdata.af_name}</h2>
+        <img>${afdata.af_img}</img>
+        <h3>${afdata.af_num}</h3>
+        `;
+
+        targetDiv.innerHTML = dataContent;
     }
 
       // run fetch API and get DB data
-    function fetchData() {
-        let targetEl = this,
-            url = `/svgdata/${this.dataset.target}`;
-
+    function fetchDataAf() {
+        let url = `/condata/africa`;
+                // svgdata/${this.dataset.target}
             fetch(url)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
 
-                //populate the popover
-                buildPopover(data, targetEl);
+                getDataAfrica(data);
             })
             .catch((err) => console.log(err));
       }
+
+    //   *********************************************************** OC
+
+      function getDataOceania(ocdata) {
+        let targetDiv = document.querySelector(".OC-wrapper");
+        let dataContent = `
+        {{#each data}}
+        <div class="flags">
+            <h2>${ocdata.oc_name}</h2>
+            <img>${ocdata.oc_img}</img>
+            <h3>${ocdata.oc_num}</h3>
+        </div>
+        {{/each}}
+        `;
+
+        targetDiv.innerHTML = dataContent;
+    }
+
+      // run fetch API and get DB data
+    function fetchDataOc() {
+        let url = `/condata/oceania`;
+                // svgdata/${this.dataset.target}
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                getDataOceania(data);
+            })
+            .catch((err) => console.log(err));
+      }
+
+      //   *********************************************************** OT
+
+      function getDataOther(otdata) {
+        let targetDiv = document.querySelector(".OT-wrapper");
+        let dataContent = `
+        {{#each data}}
+        <div class="flags">
+            <h2>${otdata.ot_name}</h2>
+            <img>${otdata.ot_img}</img>
+            <h3>${otdata.ot_num}</h3>
+        </div>
+        {{/each}}
+        `;
+
+        targetDiv.innerHTML = dataContent;
+    }
+
+      // run fetch API and get DB data
+    function fetchDataOt() {
+        let url = `/condata/other`;
+                // svgdata/${this.dataset.target}
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                getDataOther(data);
+            })
+            .catch((err) => console.log(err));
+      }
+
+      //   *********************************************************** AM
+
+      function getDataAmerica(amdata) {
+        let targetDiv = document.querySelector(".AM-wrapper");
+        let dataContent = `
+        {{#each data}}
+        <div class="flags">
+            <h2>${amdata.am_name}</h2>
+            <img>${amdata.am_img}</img>
+            <h3>${amdata.am_num}</h3>
+        </div>
+        {{/each}}
+        `;
+
+        targetDiv.innerHTML = dataContent;
+    }
+
+      // run fetch API and get DB data
+    function fetchDataAm() {
+        let url = `/condata/america`;
+                // svgdata/${this.dataset.target}
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                getDataAmerica(data);
+            })
+            .catch((err) => console.log(err));
+      }
+
+      //   *********************************************************** EU
+
+      function getDataEurope(eudata) {
+        let targetDiv = document.querySelector(".EU-wrapper");
+        let dataContent = `
+        {{#each data}}
+        <div class="flags">
+            <h2>${eudata.eu_name}</h2>
+            <img>${eudata.eu_img}</img>
+            <h3>${eudata.eu_num}</h3>
+        </div>
+        {{/each}}
+        `;
+
+        targetDiv.innerHTML = dataContent;
+    }
+
+      // run fetch API and get DB data
+    function fetchDataEu() {
+        let url = `/condata/europe`;
+                // svgdata/${this.dataset.target}
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                getDataEurope(data);
+            })
+            .catch((err) => console.log(err));
+      }
+
+      //   *********************************************************** AS
+
+      function getDataAsia(asdata) {
+        let targetDiv = document.querySelector(".AS-wrapper");
+        let dataContent = `
+        {{#each data}}
+        <div class="flags">
+            <h2>${asdata.as_name}</h2>
+            <img>${asdata.as_img}</img>
+            <h3>${asdata.as_num}</h3>
+        </div>
+        {{/each}}
+        `;
+
+        targetDiv.innerHTML = dataContent;
+    }
+
+      // run fetch API and get DB data
+    function fetchDataAs() {
+        let url = `/condata/asia`;
+                // svgdata/${this.dataset.target}
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                getDataAsia(data);
+            })
+            .catch((err) => console.log(err));
+      }
+
       
+fetchDataAf();
+fetchDataOc();
+fetchDataOt();
+fetchDataAm();
+fetchDataEu();
+fetchDataAs();
 
-    const svgGraphic = document.querySelector(".svg-wrapper");
-
-    // svgGraphic.addEventListener("click", () => {
-    //     console.log(this.querySelector('.svg-wrapper'));
-    // })
-
-    seeMoreButtons.forEach(button => button.addEventListener("click", fetchData));
 })();
