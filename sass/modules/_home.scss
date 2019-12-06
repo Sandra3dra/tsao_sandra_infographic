@@ -1,0 +1,172 @@
+.main-header {
+    position: absolute;
+    font-size: 35px;
+    letter-spacing: 1px;
+    width: 50%;
+    height: 10%;
+    right: 0;
+    top: 5%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    #building {
+        position: relative;
+        width: 50%;
+        svg {
+            position: absolute;
+            width: 100%;
+            z-index: -99;
+            margin-top: 10%;
+        }
+        #b-text {
+            position: absolute;
+            text-align: center;
+            margin-left: 25%;
+            margin-top: 145%;
+            #af, #oc, #ot, #am, #eu, #as {
+                margin-bottom: 100%;
+                h2 {
+                color: lightgray;                    
+                }
+            }
+        }
+    }
+    #dataWrapper {
+        margin-top: 65%;
+        padding-left: 5%;
+        .overFlow {
+            display: flex;
+            flex-direction: row;
+            overflow: scroll;
+            width: 120px;
+            margin-bottom: 15%;
+            .flags {
+                width: 60px;
+                margin-right: 7px;
+                padding: 2px;
+                h2 {
+                    font-size: 12px;
+                    padding-bottom: 2px;
+                }
+                img {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.slide-in-right {
+	-webkit-animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(50px);
+              transform: translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+@media screen and (min-width: 768px) {
+    .main-header {
+        font-size: 55px;
+        letter-spacing: 2px;
+        height: 30%;
+        right: 0;
+        top: 40%;
+    }
+    .container {
+        #building {
+            #b-text {
+                margin-left: 30%;
+                #af, #oc, #ot, #am, #eu, #as {
+                    margin-bottom: 110%;
+                    h2 {
+                        font-size: 35px;                   
+                    }
+                }
+            }
+        }
+        #dataWrapper {
+            margin-top: 75%;
+            .overFlow {
+                width: 320px;
+                margin-bottom: 18%;
+                .flags {
+                    width: 130px;
+                    margin-right: 15px;
+                    padding: 8px;
+                    h2 {
+                        font-size: 25px;
+                        padding-bottom: 5px;
+                    }
+                    h3 {
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main-header {
+        font-size: 75px;
+        letter-spacing: 5px;
+        height: 50%;
+        right: 40px;
+    }
+    .container {
+        #building {
+            #b-text {
+                margin-left: 30%;
+                #af, #oc, #ot, #am, #eu, #as {
+                    margin-bottom: 115%;
+                    h2 {
+                        font-size: 55px;                   
+                    }
+                }
+            }
+        }
+        #dataWrapper {
+            margin-top: 75%;
+            .overFlow {
+                width: 500px;
+                margin-bottom: 22%;
+                .flags {
+                    width: 190px;
+                    margin-right: 25px;
+                    padding: 10px;
+                    h2 {
+                        font-size: 35px;
+                    }
+                    h3 {
+                        font-size: 33px;
+                    }
+                }
+            }
+        }
+    }
+}

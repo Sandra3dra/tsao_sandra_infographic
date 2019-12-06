@@ -6,9 +6,10 @@
 
         handler: function(direction) {
           console.log('Scrolled to Africa!')
-            this.classList.remove("hidden")
+            this.element.classList.remove("hidden")
+            this.element.classList.add("slide-in-right")
         },
-        offset: "20%"
+        offset: "25%"
       })
 
       const waypoint2 = new Waypoint({
@@ -17,9 +18,10 @@
 
         handler: function(direction) {
           console.log('Scrolled to Oceania!')
-          this.classList.remove("hidden")
+          this.element.classList.remove("hidden")
+          this.element.classList.add("slide-in-right")
         },
-        offset: "30%"
+        offset: "50%"
       })
 
       const waypoint3 = new Waypoint({
@@ -28,9 +30,10 @@
 
         handler: function(direction) {
           console.log('Scrolled to Other Countries!')
-          this.classList.remove("hidden")
+          this.element.classList.remove("hidden")
+          this.element.classList.add("slide-in-right")
         },
-        offset: "40%"
+        offset: "70%"
       })
 
       const waypoint4 = new Waypoint({
@@ -39,9 +42,10 @@
 
         handler: function(direction) {
           console.log('Scrolled to America!')
-          this.classList.remove("hidden")
+          this.element.classList.remove("hidden")
+          this.element.classList.add("slide-in-right")
         },
-        offset: "50%"
+        offset: "90%"
       })
 
       const waypoint5 = new Waypoint({
@@ -50,9 +54,10 @@
 
         handler: function(direction) {
           console.log('Scrolled to Europe!')
-          this.classList.remove("hidden")
+          this.element.classList.remove("hidden")
+          this.element.classList.add("slide-in-right")
         },
-        offset: "50%"
+        offset: "100%"
       })
 
       const waypoint6 = new Waypoint({
@@ -61,9 +66,10 @@
 
         handler: function(direction) {
           console.log('Scrolled to Asia!')
-          this.classList.remove("hidden")
+          this.element.classList.remove("hidden")
+          this.element.classList.add("slide-in-right")
         },
-        offset: "50%"
+        offset: "120%"
       })
 
     //   *********************************************************** AF
@@ -72,9 +78,11 @@
     function getDataAfrica(afdata) {
         let targetDiv = document.querySelector("#AF");
         let dataContent = `
+        <div class="flags">
         <h2>${afdata.af_name}</h2>
-        <img>${afdata.af_img}</img>
+        <img src="images/${afdata.af_img}"></img>
         <h3>${afdata.af_num}</h3>
+        </div>
         `;
 
         targetDiv.innerHTML = dataContent;
@@ -101,7 +109,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${ocdata.oc_name}</h2>
-            <img>${ocdata.oc_img}</img>
+            <img src="images/${ocdata.oc_img}"></img>
             <h3>${ocdata.oc_num}</h3>
         </div>
         `;
@@ -128,7 +136,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${ocdata.oc_name}</h2>
-            <img>${ocdata.oc_img}</img>
+            <img src="images/${ocdata.oc_img}"></img>
             <h3>${ocdata.oc_num}</h3>
         </div>
         `;
@@ -157,7 +165,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${otdata.ot_name}</h2>
-            <img>${otdata.ot_img}</img>
+            <img src="images/${otdata.ot_img}"></img>
             <h3>${otdata.ot_num}</h3>
         </div>
         `;
@@ -186,7 +194,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${amdata.am_name}</h2>
-            <img>${amdata.am_img}</img>
+            <img src="images/${amdata.am_img}"></img>
             <h3>${amdata.am_num}</h3>
         </div>
         `;
@@ -213,7 +221,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${amdata.am_name}</h2>
-            <img>${amdata.am_img}</img>
+            <img src="images/${amdata.am_img}"></img>
             <h3>${amdata.am_num}</h3>
         </div>
         `;
@@ -240,7 +248,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${amdata.am_name}</h2>
-            <img>${amdata.am_img}</img>
+            <img src="images/${amdata.am_img}"></img>
             <h3>${amdata.am_num}</h3>
         </div>
         `;
@@ -267,7 +275,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${amdata.am_name}</h2>
-            <img>${amdata.am_img}</img>
+            <img src="images/${amdata.am_img}"></img>
             <h3>${amdata.am_num}</h3>
         </div>
         `;
@@ -296,7 +304,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -323,7 +331,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -350,7 +358,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -377,7 +385,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -404,7 +412,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -431,7 +439,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -458,7 +466,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${eudata.eu_name}</h2>
-            <img>${eudata.eu_img}</img>
+            <img src="images/${eudata.eu_img}"></img>
             <h3>${eudata.eu_num}</h3>
         </div>
         `;
@@ -487,7 +495,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -514,7 +522,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -541,7 +549,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -568,7 +576,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -595,7 +603,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -622,7 +630,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -649,7 +657,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -676,7 +684,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -703,7 +711,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -730,7 +738,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
@@ -757,7 +765,7 @@
         let dataContent = `
         <div class="flags">
             <h2>${asdata.as_name}</h2>
-            <img>${asdata.as_img}</img>
+            <img src="images/${asdata.as_img}"></img>
             <h3>${asdata.as_num}</h3>
         </div>
         `;
