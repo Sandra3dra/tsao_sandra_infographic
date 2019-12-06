@@ -1,27 +1,26 @@
 @import '_vars';
-@import 'modules/_header';
 @import 'modules/_home';
-@import 'modules/_footer';
-@import 'modules/_error';
-
+ 
 .hidden {
-    display: none;
+    visibility: hidden;
 }
 
 body {
-    color: $main-color;
-    background-color: $body-bg;
+    background-color: #edeae5;
 }
 
 h1 {
     color: black;
+    font-family: 'Big Shoulders Display', cursive;
 }
 
-h2, h3 {
+h2 {
     color: $light-g;
+    font-family: 'Oswald', sans-serif;
 }
 
-p {
+h3 {
     color: $dark-g;
+    font-family: 'Oswald', sans-serif;
 }
 
